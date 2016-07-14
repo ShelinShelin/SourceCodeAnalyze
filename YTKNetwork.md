@@ -176,11 +176,12 @@ Delegate回调
 }
 ```
 
-- ```YTKNetworkConfig```：配置请求根路径、DNS地址。
+- YTKNetworkConfig：配置请求根路径、DNS地址。
 
-- ```YTKNetworkPrivate```：可以理解为一个工具类，拼接地址，提供加密方法，定义分类等。
+- YTKNetworkPrivate：可以理解为一个工具类，拼接地址，提供加密方法，定义分类等。
 
-- ```YTKBatchRequest```、```YTKChainRequest```：这是YKTNetwork的两个高级用法，批量网络请求和链式的网络请求，相当于一个存放Request的容器，先定义下面属性，finishedCount来记录批量请求的完成的个数：
+- YTKBatchRequest、YTKChainRequest：这是YKTNetwork的两个高级用法，批量网络请求和链式的网络请求，相当于一个存放Request的容器，先定义下面属性，finishedCount来记录批量请求的完成的个数：
+
 
 ```
 @interface YTKBatchRequest() <YTKRequestDelegate>
