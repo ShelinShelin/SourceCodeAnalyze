@@ -59,8 +59,8 @@
 ```
 　　同时在YYTransaction.m中注册一个RunloopObserver，监听MainRunloop在```kCFRunLoopCommonModes```（包含```kCFRunLoopDefaultMode```、```UITrackingRunLoopMode```）下的```kCFRunLoopBeforeWaiting```和```kCFRunLoopExit```的状态，也就是说在一次Runloop空闲时去执行更新显示的操作。
 
->```kCFRunLoopBeforeWaiting```：Runloop将要进入休眠。
-```kCFRunLoopExit```：即将退出本次Runloop。
+>kCFRunLoopBeforeWaiting：Runloop将要进入休眠。
+ kCFRunLoopExit：即将退出本次Runloop。
 
 ```
 
@@ -100,10 +100,10 @@ static void YYRunLoopObserverCallBack(CFRunLoopObserverRef observer, CFRunLoopAc
 　　YYAsyncLayer.m有一个方法```YYAsyncLayerGetDisplayQueue```来获取这个队列用于绘制（这部分YYKit中有独立的工具YYDispatchQueuePool）。创建队列中有一个参数是告诉队列执行任务的服务质量quality of service，在iOS8+之后相比之前系统有所不同。
 - iOS8之前队列优先级：
 
->```DISPATCH_QUEUE_PRIORITY_HIGH 2```                 高优先级
-     ```DISPATCH_QUEUE_PRIORITY_DEFAULT 0```              默认优先级
-     ```DISPATCH_QUEUE_PRIORITY_LOW (-2)```               低优先级
-     ```DISPATCH_QUEUE_PRIORITY_BACKGROUND INT16_MIN```  后台优先级
+>   DISPATCH_QUEUE_PRIORITY_HIGH 2                 高优先级
+    DISPATCH_QUEUE_PRIORITY_DEFAULT 0              默认优先级
+    DISPATCH_QUEUE_PRIORITY_LOW (-2)               低优先级
+    DISPATCH_QUEUE_PRIORITY_BACKGROUND INT16_MIN  后台优先级
 
 - iOS8+之后：
 
